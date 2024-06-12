@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESSION-STORAGE</title>
+</head>
+
+<body>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="saveName">Save Name</button>
+    <button id="showName">Show Name</button>
+    <button id="removeName">Remove Name</button>
+    <button id="clearStorage">Clear Storage</button>
+    <h1 id="displayName"></h1>
+    <script>
+        document.querySelector("#saveName").onclick = () => {
+            let name = document.querySelector("#name").value;
+            window.sessionStorage.setItem("name", name);
+        }
+        document.querySelector("#showName").onclick = () => {
+            let name = sessionStorage.getItem("name");
+            if (name) {
+                let newWindow = window.open("", "NewWindow", "width=00,height=300");
+                newWindow.document.write(`<h1>Stored Name: ${name}</h1>`);
+                document.querySelector("#displayName").innerText = `stored name : ${name}`
+
+            }
+            else {
+                document.querySelector("#displayName").innerText = "no name"
+            }
+
+        }
+        document.querySelector("#removeName").onclick = () => {
+            window.sessionStorage.removeItem("name");
+            document.querySelector("#displayName").innerText = "Name removed"
+        }
+        document.querySelector("#clearStorage").onclick = () => {
+            window.sessionStorage.clear();
+            document.querySelector("#displayName").innerText = "storage cleared"
+        }
+    </script>
+</body>
+
+</html>

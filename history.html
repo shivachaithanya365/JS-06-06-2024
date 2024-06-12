@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY</title>
+</head>
+
+<body>
+    <script>
+        let btn = document.createElement("button");
+        btn.innerHTML = "1.Click me";
+        document.body.appendChild(btn);
+
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "2.Forward";
+        document.body.appendChild(btn2);
+
+        let btn3 = document.createElement("button");
+        btn3.innerHTML = "3.Go";
+        document.body.appendChild(btn3);
+
+        btn.onclick = () => {
+            window.location.assign("./hisRedirect.html");
+        }
+
+        btn2.onclick = () => {
+            window.history.forward();
+        }
+        btn3.onclick = () => {
+            window.history.go();
+        }
+
+    </script>
+</body>
+
+</html>

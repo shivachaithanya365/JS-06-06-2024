@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY-2</title>
+</head>
+
+<body>
+    <script>
+        let btn = document.createElement("button");
+        btn.innerHTML = "1. Click me";
+        document.body.appendChild(btn);
+        document.body.appendChild(document.createElement("br"));
+
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "2. Forward";
+        document.body.appendChild(btn2);
+        document.body.appendChild(document.createElement("br"));
+
+        let btn3 = document.createElement("button");
+        btn3.innerHTML = "3. Backward";
+        document.body.appendChild(btn3);
+        document.body.appendChild(document.createElement("br"));
+        
+        let btn4 = document.createElement("button");
+        btn4.innerHTML = "4. Go";
+        document.body.appendChild(btn4);
+
+        btn.onclick = () => {
+            window.location.assign("https://www.google.com");
+        };
+
+        btn2.onclick = () => {
+            window.history.forward();
+        };
+
+        btn3.onclick = () => {
+            window.history.back();
+        };
+
+        btn4.onclick = () => {2
+            window.history.go(1);
+        };
+    </script>
+</body>
+
+</html>
