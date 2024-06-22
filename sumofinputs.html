@@ -5,18 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUM OF INPUT VALUES</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <script>
-        var number = prompt("Enter a value");
-        var sum = 0;
+        var number = prompt("Enter a multi digit value");
+        var sum = 0
 
-        for (input of number) {
-            sum += Number(input);
+        if (number !== "") {
+            for (var input of number) {
+                sum += Number(input);
+            }
+            document.write(`<h1>Sum of input values ( ${number} ) is : ${sum}</h1>`);
+            console.log(`Sum of input values ( ${number} ) is : ${sum}`);
+        }
+        else {
+            document.write(`<h1>Please enter a input</h1>`);
+            console.log(`Please enter a input`);
         }
 
-        document.write(`<h1 style="text-align: center; margin-top: 10%">Sum of input values : ${sum}</h1>`);
 
     </script>
 </body>
